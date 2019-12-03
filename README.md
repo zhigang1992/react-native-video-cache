@@ -1,8 +1,16 @@
 # react-native-video-cache
 
+Boost performance on online video loading and caching
+
+Use following libraries to do the heavy lifting.
+
+- iOS: https://github.com/ChangbaDevs/KTVHTTPCache
+- Android: https://github.com/danikula/AndroidVideoCache
+
+
 ## Getting started
 
-`$ npm install react-native-video-cache --save`
+`$ yarn add react-native-video-cache`
 
 ### Mostly automatic installation
 
@@ -10,8 +18,9 @@
 
 ## Usage
 ```javascript
-import VideoCache from 'react-native-video-cache';
-
-// TODO: What to do with the module?
-VideoCache;
+import convertToProxyURL from 'react-native-video-cache';
+...
+const localProxiedURL = await convertToProxyURL(originalURL);
+...
+<Video source={{uri: localProxiedURL}} />
 ```

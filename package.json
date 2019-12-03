@@ -2,11 +2,9 @@
   "name": "react-native-video-cache",
   "title": "React Native Video Cache",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "Boost performance on online video loading and caching",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhigang1992/react-native-video-cache.git",
@@ -23,8 +21,8 @@
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {
-    "react": "^16.8.1",
-    "react-native": ">=0.59.0-rc.0 <1.0.x"
+    "react": "*",
+    "react-native": "*"
   },
   "devDependencies": {
     "react": "^16.8.3",

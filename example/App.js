@@ -10,7 +10,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import VideoCache from 'react-native-video-cache';
+import convertToCache from 'react-native-video-cache';
 
 export default class App extends Component<{}> {
   state = {
@@ -18,7 +18,7 @@ export default class App extends Component<{}> {
     message: '--'
   };
   componentDidMount() {
-    VideoCache.convert('https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4').then((message) => {
+    convertToCache('https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4').then((message) => {
       this.setState({
         status: 'native callback received',
         message
