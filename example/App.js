@@ -18,7 +18,7 @@ export default class App extends Component<{}> {
     message: '--'
   };
   componentDidMount() {
-    VideoCache.sampleMethod('Testing', 123, (message) => {
+    VideoCache.convert('https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4').then((message) => {
       this.setState({
         status: 'native callback received',
         message

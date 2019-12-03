@@ -1,13 +1,15 @@
 package com.reactnative.videocache;
 
+import com.danikula.videocache.HttpProxyCacheServer;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
 
 public class VideoCacheModule extends ReactContextBaseJavaModule {
 
     private final ReactApplicationContext reactContext;
+    private HttpProxyCacheServer proxy;
 
     public VideoCacheModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -20,8 +22,12 @@ public class VideoCacheModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-        // TODO: Implement some actually useful functionality
-        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
+    public void convert(
+            String url,
+            Promise promise) {
+        if (this.proxy == null) {
+            this.proxy = new HttpProxyCacheServer(this.reactContext);
+        }
+        promise.resolve(this.proxy.getProxyUrl(url));
     }
 }

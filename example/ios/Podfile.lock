@@ -1,14 +1,20 @@
 PODS:
   - boost-for-react-native (1.63.0)
+  - CocoaAsyncSocket (7.6.3)
   - DoubleConversion (1.1.6)
   - Folly (2018.10.22.00):
     - boost-for-react-native
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - KTVCocoaHTTPServer (1.0.0):
+    - CocoaAsyncSocket
+  - KTVHTTPCache (2.0.1):
+    - KTVCocoaHTTPServer
   - React (0.59.10):
     - React/Core (= 0.59.10)
   - react-native-video-cache (1.0.0):
+    - KTVHTTPCache (~> 2.0.0)
     - React
   - React/Core (0.59.10):
     - yoga (= 0.59.10.React)
@@ -96,6 +102,9 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - CocoaAsyncSocket
+    - KTVCocoaHTTPServer
+    - KTVHTTPCache
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -113,11 +122,14 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
+  KTVCocoaHTTPServer: df8d7b861e603ff8037e9b2138aca2563a6b768d
+  KTVHTTPCache: 588c3eb16f6bd1e6fde1e230dabfb7bd4e490a4d
   React: 36d0768f9e93be2473b37e7fa64f92c1d5341eef
-  react-native-video-cache: 50bf2a6db6f7a6b4290138418cb1de6aeac61e9f
+  react-native-video-cache: a9b3bb7c7ad2c33348a35ed5617ac93cf179c9f9
   yoga: 684513b14b03201579ba3cee20218c9d1298b0cc
 
 PODFILE CHECKSUM: 8cb65c707639127200176815b46fe7b0846ce649
