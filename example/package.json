@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "16.8.3",
     "react-native": "0.59",
-    "react-native-video-cache": "file:../"
+    "react-native-video-cache": "file:.."
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
