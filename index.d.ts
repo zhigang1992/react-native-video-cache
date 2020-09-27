@@ -1,1 +1,1 @@
-export default function convert(url: string): Promise<string>
+export default function convert(url: string): string;
