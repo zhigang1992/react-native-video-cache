@@ -7,7 +7,6 @@ Use following libraries to do the heavy lifting.
 - iOS: https://github.com/ChangbaDevs/KTVHTTPCache
 - Android: https://github.com/danikula/AndroidVideoCache
 
-
 ## Getting started
 
 `$ yarn add react-native-video-cache`
@@ -17,10 +16,9 @@ Use following libraries to do the heavy lifting.
 `$ react-native link react-native-video-cache`
 
 ## Usage
+
 ```javascript
 import convertToProxyURL from 'react-native-video-cache';
 ...
-const localProxiedURL = await convertToProxyURL(originalURL);
-...
-<Video source={{uri: localProxiedURL}} />
+<Video source={{uri: convertToProxyURL(originalURL)}} />
 ```
