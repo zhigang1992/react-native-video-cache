@@ -22,7 +22,7 @@ public class VideoCacheModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod(isBlockingSynchronousMethod = true)
-    public void convert(String url) {
+    public String convert(String url) {
         if (this.proxy == null) {
             this.proxy = new HttpProxyCacheServer(this.reactContext);
         }
