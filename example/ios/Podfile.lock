@@ -13,7 +13,7 @@ PODS:
     - KTVCocoaHTTPServer
   - React (0.59.10):
     - React/Core (= 0.59.10)
-  - react-native-video-cache (1.0.0):
+  - react-native-video-cache (2.0.2):
     - KTVHTTPCache (~> 2.0.0)
     - React
   - React/Core (0.59.10):
@@ -129,7 +129,7 @@ SPEC CHECKSUMS:
   KTVCocoaHTTPServer: df8d7b861e603ff8037e9b2138aca2563a6b768d
   KTVHTTPCache: 588c3eb16f6bd1e6fde1e230dabfb7bd4e490a4d
   React: 36d0768f9e93be2473b37e7fa64f92c1d5341eef
-  react-native-video-cache: 90b8857673151d2618fc61030f14d755d1e92d4e
+  react-native-video-cache: 5c2bc7d9d17c6d8388dfbd2ab5c83bcf7d338dbc
   yoga: 684513b14b03201579ba3cee20218c9d1298b0cc
 
 PODFILE CHECKSUM: 8cb65c707639127200176815b46fe7b0846ce649
