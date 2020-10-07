@@ -1,5 +1,8 @@
 import { NativeModules } from 'react-native';
 
-const { VideoCache } = NativeModules;
-
-export default VideoCache.convert;
+export default (url) => {
+  if (!global.nativeCallSyncHook) {
+    return url
+  }
+  return NativeModules.VideoCache.convert(url)
+};
