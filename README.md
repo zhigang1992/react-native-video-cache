@@ -22,3 +22,12 @@ import convertToProxyURL from 'react-native-video-cache';
 ...
 <Video source={{uri: convertToProxyURL(originalURL)}} />
 ```
+
+Both sync and async named methods are also exported:
+```javascript
+import { convertToProxyURL, convertToProxyURLAsync } from 'react-native-video-cache';
+
+convertToProxyURLAsync(originalURL).then(newUrl => console.log(`Got proxy url ${newUrl}`))
+```
+Note that the Chrome debugger does not currently support synchronous calls to native 
+methods, so you can use the async method for compatibility.

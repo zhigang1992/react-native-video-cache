@@ -18,18 +18,18 @@ RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(convert:(NSString *)url)
 }
 
 RCT_EXPORT_METHOD(convertAsync:(NSString *)url
-                  resolver:(RCTPromiseResolveBlock)resolve
-                  rejecter:(RCTPromiseRejectBlock)reject)
+                      resolver:(RCTPromiseResolveBlock)resolve
+                      rejecter:(RCTPromiseRejectBlock)reject)
 {
-  if (!KTVHTTPCache.proxyIsRunning) {
-    NSError *error;
-    [KTVHTTPCache proxyStart:&error];
-    if (error) {
-      reject(@"init.error", @"failed to start proxy server", error);
-      return;
+    if (!KTVHTTPCache.proxyIsRunning) {
+      NSError *error;
+      [KTVHTTPCache proxyStart:&error];
+      if (error) {
+        reject(@"init.error", @"failed to start proxy server", error);
+        return;
+      }
     }
-  }
-  resolve([KTVHTTPCache proxyURLWithOriginalURL:[NSURL URLWithString:url]].absoluteString);
+    resolve([KTVHTTPCache proxyURLWithOriginalURL:[NSURL URLWithString:url]].absoluteString);
 }
 
 @end

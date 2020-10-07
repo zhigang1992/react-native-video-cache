@@ -31,10 +31,6 @@ public class VideoCacheModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void convertAsync(String url, Promise promise) {
-        if (this.proxy == null) {
-            this.proxy = new HttpProxyCacheServer(this.reactContext);
-        }
-        promise.resolve(this.proxy.getProxyUrl(url));
+        promise.resolve(this.convert(url));
     }
-
 }
