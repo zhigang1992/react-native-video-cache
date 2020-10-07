@@ -6,3 +6,6 @@ export default (url) => {
   }
   return NativeModules.VideoCache.convert(url)
 };
+
+export const convertAsync = VideoCache.convertAsync;
+

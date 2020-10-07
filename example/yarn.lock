@@ -4720,7 +4720,7 @@ react-is@^16.8.1, react-is@^16.8.3, react-is@^16.8.4:
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
 "react-native-video-cache@file:..":
-  version "1.0.0"
+  version "2.0.2"
 
 react-native@0.59:
   version "0.59.10"
