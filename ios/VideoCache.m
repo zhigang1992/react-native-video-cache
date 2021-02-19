@@ -14,7 +14,17 @@ RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(convert:(NSString *)url)
         return url;
       }
     }
-    return [KTVHTTPCache proxyURLWithOriginalURL:[NSURL URLWithString:url]].absoluteString;
+    NSURL* videoUrl = [NSURL URLWithString:url];
+    @try {
+        NSURL *completedCacheFileURL = [KTVHTTPCache cacheCompleteFileURLWithURL:videoUrl];
+        if (completedCacheFileURL != nil) {
+            return completedCacheFileURL.absoluteString;
+        }
+    }
+    @catch (NSException *exception) {
+    }
+    
+    return [KTVHTTPCache proxyURLWithOriginalURL:videoUrl].absoluteString;
 }
 
 RCT_EXPORT_METHOD(convertAsync:(NSString *)url
@@ -29,7 +39,17 @@ RCT_EXPORT_METHOD(convertAsync:(NSString *)url
       return;
     }
   }
-  resolve([KTVHTTPCache proxyURLWithOriginalURL:[NSURL URLWithString:url]].absoluteString);
+  NSURL* videoUrl = [NSURL URLWithString:url];
+  @try {
+      NSURL *completedCacheFileURL = [KTVHTTPCache cacheCompleteFileURLWithURL:videoUrl];
+      if (completedCacheFileURL != nil) {
+          resolve(completedCacheFileURL.absoluteString);
+          return;
+      }
+  }
+  @catch (NSException *exception) {
+  }
+  resolve([KTVHTTPCache proxyURLWithOriginalURL:videoUrl].absoluteString);
 }
 
 @end
