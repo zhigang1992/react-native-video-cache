@@ -65,12 +65,16 @@ RCT_EXPORT_METHOD(setIgnoreUrlParams:(BOOL)shouldIgnore
       return;
     }
   }
-  [KTVHTTPCache encodeSetURLConverter:^NSURL *(NSURL *URL) {
-      NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:URL resolvingAgainstBaseURL:NO];
-      urlComponents.query = nil;
-      NSURL *url = urlComponents.URL;
-      return url;
-  }];
+
+  if (shouldIgnore) {
+    [KTVHTTPCache encodeSetURLConverter:^NSURL *(NSURL *URL) {
+        NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:URL resolvingAgainstBaseURL:NO];
+        urlComponents.query = nil;
+        NSURL *url = urlComponents.URL;
+        return url;
+    }];
+  }
+
   resolve(@"success");
 }
 
