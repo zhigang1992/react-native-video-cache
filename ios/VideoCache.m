@@ -52,4 +52,26 @@ RCT_EXPORT_METHOD(convertAsync:(NSString *)url
   resolve([KTVHTTPCache proxyURLWithOriginalURL:videoUrl].absoluteString);
 }
 
+
+RCT_EXPORT_METHOD(setIgnoreUrlParams:(BOOL)shouldIgnore
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+{
+  if (!KTVHTTPCache.proxyIsRunning) {
+    NSError *error;
+    [KTVHTTPCache proxyStart:&error];
+    if (error) {
+      reject(@"init.error", @"failed to start proxy server", error);
+      return;
+    }
+  }
+  [KTVHTTPCache encodeSetURLConverter:^NSURL *(NSURL *URL) {
+      NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:URL resolvingAgainstBaseURL:NO];
+      urlComponents.query = nil;
+      NSURL *url = urlComponents.URL;
+      return url;
+  }];
+  resolve(@"success");
+}
+
 @end

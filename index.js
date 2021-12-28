@@ -9,3 +9,9 @@ export default (url) => {
 
 export const convertAsync = NativeModules.VideoCache.convertAsync;
 
+export const setIgnoreUrlParams = (shouldIgnore) => {
+  if (Platform.OS === "web") {
+    return Promise.resolve();
+  }
+  return NativeModules.VideoCache.setIgnoreUrlParams(shouldIgnore);
+};
