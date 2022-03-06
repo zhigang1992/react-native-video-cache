@@ -1,5 +1,5 @@
 {
-  "name": "react-native-video-cache",
+  "name": "react-native-video-cache-with-params-ignore",
   "title": "React Native Video Cache",
   "version": "2.7.1",
   "description": "Boost performance on online video loading and caching",
