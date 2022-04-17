@@ -1,8 +1,8 @@
 # react-native-video-cache
 
-Boost performance on online video loading and caching
-
 * Fixed its android conflict with react native v0.67 (gradle > 0.7)
+
+Boost performance on online video loading and caching
 
 Use following libraries to do the heavy lifting.
 
