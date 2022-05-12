@@ -73,7 +73,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
-    implementation 'com.danikula:videocache:2.7.1'
+    implementation files("./libs/videocache-2.7.1.aar")
 }
 
 def configureReactNativePom(def pom) {
@@ -110,7 +110,7 @@ afterEvaluate { project ->
     task androidJavadoc(type: Javadoc) {
         source = android.sourceSets.main.java.srcDirs
         classpath += files(android.bootClasspath)
-        classpath += files(project.getConfigurations().getByName('compile').asList())
+//         classpath += files(project.getConfigurations().getByName('compile').asList())
         include '**/*.java'
     }
 
