@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "react": "16.8.3",
-    "react-native": "0.59",
+    "react-native": "0.62",
     "react-native-video-cache": "file:.."
   },
   "devDependencies": {
