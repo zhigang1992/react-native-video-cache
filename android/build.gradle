@@ -73,7 +73,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
-    implementation files("./libs/videocache-2.7.1.aar")
+    implementation 'com.danikula:videocache:2.7.1'
 }
 
 def configureReactNativePom(def pom) {
