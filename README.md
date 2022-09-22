@@ -30,9 +30,10 @@ It might be useful to disregard url parameters when generating the cache key if 
 
 At application startup:
 ```javascript
-import convertToProxyURL from 'react-native-video-cache';
+import * as cache from "react-native-video-cache-with-params-ignore";
+
 // ...
-await convertToProxyURL.setIgnoreUrlParams(true);
+await cache.setIgnoreUrlParams(true);
 
 ```
 ### Install on android
