@@ -36,3 +36,14 @@ Edit your `android/build.gradle` file and add the following lines:
 ```
 
 to your `allprojects/repositories`
+
+### Running android in release mode
+
+To run in release mode you will need to make sure you add `android:usesCleartextTraffic="true"` to your main android manifest like so:
+
+```xml
+    <application
+      ...
+      android:usesCleartextTraffic="true"
+      ...>
+```
